@@ -8,6 +8,7 @@ export class BaseService {
         if (body.status === 'success') {
             return body.data;
         } else if (body.status === 'fail') {
+            
             throw new ServiceError(body.message, body.data, 'fail');
         } else if (body.status === 'error') {
             throw new ServiceError(body.message, body.data);
